@@ -1,0 +1,40 @@
+#RBENV
+export PATH=$HOME/.git-solo-flow/bin:$PATH
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+#export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# postgres.app
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# toggle iTerm Dock icon
+# add this to your .bash_profile or .zshrc
+function toggleiTerm() {
+	pb='/usr/libexec/PlistBuddy'
+	iTerm='/Applications/iTerm.app/Contents/Info.plist'
+
+	echo "Do you wish to hide iTerm in Dock?"
+	select ync in "Hide" "Show" "Cancel"; do
+	    case $ync in
+	        'Hide' )
+	        	$pb -c "Add :LSUIElement bool true" $iTerm
+	        	echo "relaunch iTerm to take effectives"
+	        	break
+	        	;;
+	        'Show' )
+	        	$pb -c "Delete :LSUIElement" $iTerm
+	        	echo "run killall 'iTerm' to exit, and then relaunch it"
+	        	break
+	        	;;
+		'Cancel' )
+			break
+			;;
+	    esac
+	done
+}
