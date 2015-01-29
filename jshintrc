@@ -1,0 +1,30 @@
+{
+  "camelcase": false,
+  "indent": 2,
+  "jquery": true,
+  "latedef": false,
+  "quotmark": "single",
+  "predef": [
+    "App",
+    "Big",
+    "I18n",
+    "JSZip",
+    "Mock",
+    "_",
+    "afterEach",
+    "angular",
+    "beforeEach",
+    "confirm",
+    "describe",
+    "expect",
+    "fixture",
+    "inject",
+    "it",
+    "jasmine",
+    "module",
+    "moment",
+    "runs",
+    "spyOn",
+    "waitsFor"
+  ]
+}

@@ -1,0 +1,21 @@
+inherit_from:
+  - Workspace/ruby/Tango/config/rubocop.yml
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+Documentation:
+  Enabled: false
+
+Metrics/ClassLength:
+  CountComments: false
+  Max: 500
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 100
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+

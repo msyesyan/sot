@@ -47,7 +47,7 @@ end
 
 begin
   require 'awesome_print'
-  # AwesomePrint.pry!
+  AwesomePrint.pry!
 rescue LoadError => err
 end
 
