@@ -1,10 +1,25 @@
-inherit_from:
-  - Workspace/ruby/Tango/config/rubocop.yml
+Documentation:
+  Enabled: false
 
 Style/DotPosition:
   EnforcedStyle: trailing
 
-Documentation:
+Style/GuardClause:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+Style/FileName:
+  Enabled: false
+
+Style/GuardClause:
+  MinBodyLength: 1
+
+IfUnlessModifier:
   Enabled: false
 
 Metrics/ClassLength:
@@ -15,7 +30,12 @@ Metrics/MethodLength:
   CountComments: false
   Max: 100
 
+Metrics/AbcSize:
+  max: 15
+
+Metrics/LineLength:
+  Max: 120
+
 Style/ClassAndModuleChildren:
   Enabled: false
-
 

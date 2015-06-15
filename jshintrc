@@ -2,6 +2,8 @@
   "camelcase": false,
   "indent": 2,
   "jquery": true,
+  "unused": true,
+  "debug": true,
   "latedef": false,
   "quotmark": "single",
   "predef": [

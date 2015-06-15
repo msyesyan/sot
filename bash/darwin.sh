@@ -8,6 +8,7 @@ if [[ $(type -P brew) ]]; then
 fi
 
 
-export EDITOR="subl -w"
-export GEM_EDITOR="subl"
-
+export EDITOR="atom -w"
+export GEM_EDITOR="atom -w"
+# export EDITOR="vim"
+# export GEM_EDITOR="vim"

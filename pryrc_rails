@@ -2,8 +2,9 @@
 
 begin
   require 'hirb'
-  require "hirb-unicode"
+  require 'hirb-unicode'
 rescue LoadError
+  show_log 'cannot load hirb, hirb-unicode'
 end
 
 if defined? Hirb

@@ -1,8 +1,8 @@
 [core]
+	#editor = atom -m
 	editor = subl -w
 
 [diff]
-	# tool = araxis
 	tool = Kaleidoscope
 
 [merge]
