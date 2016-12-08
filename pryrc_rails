@@ -3,8 +3,8 @@
 begin
   require 'hirb'
   require 'hirb-unicode'
-rescue LoadError
-  show_log 'cannot load hirb, hirb-unicode'
+rescue LoadError => e
+  puts e
 end
 
 if defined? Hirb
@@ -25,17 +25,4 @@ if defined? Hirb
   end
 
   Hirb.enable
-end
-
-def change_log(stream)
-  ActiveRecord::Base.logger = Logger.new(stream)
-  ActiveRecord::Base.clear_active_connections!
-end
-
-def show_log
-  change_log(STDOUT)
-end
-
-def hide_log
-  change_log(nil)
 end
