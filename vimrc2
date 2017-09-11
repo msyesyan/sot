@@ -11,67 +11,70 @@ if has('vim_starting')
 endif
 
 " Required:
-call neobundle#begin(expand('/Users/msyesyan/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
-NeoBundle 'genutils'
+" NeoBundle 'genutils'
+NeoBundle 'mileszs/ack.vim'
 
-NeoBundle 'ZoomWin'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jistr/vim-nerdtree-tabs'
-NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'airblade/vim-gitgutter'
+" NeoBundle 'ZoomWin'
+" NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'jistr/vim-nerdtree-tabs'
+" NeoBundle 'Lokaltog/vim-powerline'
+" NeoBundle 'christoomey/vim-tmux-navigator'
+" NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'DavidEGx/ctrlp-smarttabs'
-NeoBundle 'kristijanhusak/vim-multiple-cursors'
-NeoBundle 'matze/vim-move'
-NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'VisIncr'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'ctags.vim'
-NeoBundle 'craigemery/vim-autotag'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'tpope/vim-repeat'
+" NeoBundle 'DavidEGx/ctrlp-smarttabs'
+" NeoBundle 'kristijanhusak/vim-multiple-cursors'
+" NeoBundle 'matze/vim-move'
+" NeoBundle 'AndrewRadev/splitjoin.vim'
+" NeoBundle 'VisIncr'
+" NeoBundle 'ervandew/supertab'
+" NeoBundle 'Lokaltog/vim-easymotion'
+" NeoBundle 'ctags.vim'
+" NeoBundle 'craigemery/vim-autotag'
+" NeoBundle 'majutsushi/tagbar'
+" NeoBundle 'tpope/vim-repeat'
 " NeoBundle 'svermeulen/vim-easyclip'
 
-NeoBundle 'ntpeters/vim-better-whitespace'
-NeoBundle 'SeeTab'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'danro/rename.vim'
-NeoBundle 'godlygeek/tabular'
+" NeoBundle 'ntpeters/vim-better-whitespace'
+" NeoBundle 'SeeTab'
+" NeoBundle 'nathanaelkane/vim-indent-guides'
+" NeoBundle 'tomtom/tcomment_vim'
+" NeoBundle 'tpope/vim-surround'
+" NeoBundle 'danro/rename.vim'
+" NeoBundle 'godlygeek/tabular'
 
-NeoBundle 'rking/ag.vim'
-NeoBundle 'dyng/ctrlsf.vim'
+" NeoBundle 'rking/ag.vim'
+" NeoBundle 'dyng/ctrlsf.vim'
 
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-unimpaired'
+" NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'tpope/vim-unimpaired'
 
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'Shougo/neocomplete.vim'
+" NeoBundle 'SirVer/ultisnips'
+" NeoBundle 'honza/vim-snippets'
+" NeoBundle 'Shougo/neocomplete.vim'
 " NeoBundle 'Shougo/neosnippet'
 " NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/context_filetype.vim'
+" NeoBundle 'Shougo/context_filetype.vim'
 
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'skwp/vim-rspec'
-NeoBundle 'tpope/vim-sleuth'
+" NeoBundle 'vim-ruby/vim-ruby'
+" NeoBundle 'tpope/vim-rails'
+" NeoBundle 'tpope/vim-markdown'
+" NeoBundle 'skwp/vim-rspec'
+" NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'posva/vim-vue'
+NeoBundle 'isruslan/vim-es6'
 
-NeoBundle 'guicolorscheme.vim'
+" NeoBundle 'guicolorscheme. vim'
 NeoBundle 'altercation/vim-colors-solarized'
 
-NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'Shougo/vimproc.vim', { 'build': { 'mac': 'make -f make_mac.mak' } }
+" NeoBundle 'Shougo/vimshell.vim'
+" NeoBundle 'Shougo/vimproc.vim', { 'build': { 'mac': 'make -f make_mac.mak' } }
 
 " You can specify revision/branch/tag.
 " NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -90,55 +93,64 @@ let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
 
-set nu!
+set nu
 set ruler
-set nobackup
-set incsearch
+" set nobackup
 set ic is hlsearch
-set mouse=v
+let @/=""
+" set mouse=a
 set clipboard=unnamed
 " tab space
-" set tabstop=2
-" set shiftround
-" set shiftwidth=2
-" set expandtab
-" Make it obvious where 80 characters is
-set textwidth=80
+set tabstop=2
+set shiftround
+set shiftwidth=2
+set expandtab
+" Make it obvious where 120 characters is
+set textwidth=120
 set colorcolumn=+1
 highlight ColorColumn ctermbg=7
 
-let g:ctrlp_regexp = 1
-let g:ctrlp_extensions = ['smarttabs']
+" Fuzzy Search
+" Folder Fuzzy Search
+set wildmenu
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.psd,*.pdf
+set wildignore+=node_modules/*,bower_components/*
+" set autochdir
+
+
+" let g:ctrlp_regexp = 1
+" let g:ctrlp_extensions = ['smarttabs']
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
 " vim-move
-let g:move_key_modifier = 'C'
+" let g:move_key_modifier = 'C'
 
 " vim-easymotion
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_startofline = 0
-nmap s <Plug>(easymotion-sn)
-nmap ; <Plug>(easymotion-next)
-nmap , <Plug>(easymotion-prev)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
+" let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" let g:EasyMotion_smartcase = 1
+" let g:EasyMotion_startofline = 0
+" nmap s <Plug>(easymotion-sn)
+" nmap ; <Plug>(easymotion-next)
+" nmap , <Plug>(easymotion-prev)
+" map <Leader>l <Plug>(easymotion-lineforward)
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+" map <Leader>h <Plug>(easymotion-linebackward)
 
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_show_linenumbers = 2
+" nmap <F8> :TagbarToggle<CR>
+" let g:tagbar_show_linenumbers = 2
 " autocmd VimEnter * nested :call tagbar#autoopen(1)
 " autocmd FileType * nested :call tagbar#autoopen(0)
 " autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 " snippets
-let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_at_startup = 1
 
 " vim-better-whitespace
-highlight ExtraWhitespace ctermbg=white
-let g:strip_whitespace_on_save=1
-set list listchars=tab:»-,trail:·,nbsp:·
+" highlight ExtraWhitespace ctermbg=white
+" let g:strip_whitespace_on_save=1
+" set list listchars=tab:»-,trail:·,nbsp:·
 
 " let g:indent_guides_enable_on_vim_startup=1
 " let g:indent_guides_guide_size = 1
@@ -149,31 +161,30 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-map <c-t> <plug>NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup=0
-let g:nerdtree_tabs_open_on_gui_startup = 0
-
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
+" map <c-t> <plug>NERDTreeTabsToggle<CR>
+" let g:nerdtree_tabs_open_on_console_startup=0
+" let g:nerdtree_tabs_open_on_gui_startup = 0
+" 
+" " nmap     <C-F>f <Plug>CtrlSFPrompt
+" " vmap     <C-F>f <Plug>CtrlSFVwordPath
+" vmap     <C-F>F <Plug>CtrlSFVwordExec
+" nmap     <C-F>n <Plug>CtrlSFCwordPath
+" nmap     <C-F>p <Plug>CtrlSFPwordPath
+" nnoremap <C-F>o :CtrlSFOpen<CR>
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
-let g:syntastic_javascript_jshint_args="--config ~/.jshintrc"
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_ruby_rubcopo_args="-D --config ~/.rubocop.yml"
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_error_symbol = "✗"
+" let g:syntastic_warning_symbol = "⚠"
+" let g:syntastic_javascript_jshint_args="--config ~/.jshintrc"
+" let g:syntastic_ruby_checkers = ['rubocop']
+" let g:syntastic_ruby_rubcopo_args="-D --config ~/.rubocop.yml"
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_mode_map = {
-  \ "mode": "active",
-  \ "passive_filetypes": ["html"] }
-
+" let g:syntastic_mode_map = {
+"   \ "mode": "active",
+"   \ "passive_filetypes": ["html"] }

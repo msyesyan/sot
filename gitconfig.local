@@ -6,17 +6,7 @@
 	email = msyesyan@gmail.com
 
 [alias]
-
-# Go to the first commit
-first = "!git checkout `(git log --oneline --reverse | head -n 1 | awk '{print $1}')`"
-
-# Go to the last commit
-last = checkout master
-
-# Go to the next commit
-next = "!git checkout $(git log --oneline --reverse --ancestry-path 'HEAD..master' | head -n 1 | awk '{print $1}')"
-
-# Go to the previous commit
-pre = checkout 'HEAD^'
-
-
+	first = "!git checkout `(git log --oneline --reverse | head -n 1 | awk '{print $1}')`"
+	last = checkout master
+	next = "!git checkout $(git log --oneline --reverse --ancestry-path 'HEAD..master' | head -n 1 | awk '{print $1}')"
+	pre = checkout 'HEAD^'

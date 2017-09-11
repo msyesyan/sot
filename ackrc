@@ -2,9 +2,12 @@
 --color
 
 --ignore-dir=tmp/
+--ignore-directory=is:node_modules
+--ignore-directory=is:bower_compoments
+--ignore-directory=is:dist
 
 --type-add=ruby=.ru
 --type-add=ruby=.rake
 
---type-add=css=.sass
---type-add=css=.scss
+--type-set=scss=sass:ext:scss,sass
+--type-set=markdown:ext:md,markdown

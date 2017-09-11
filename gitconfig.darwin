@@ -1,12 +1,7 @@
 [core]
-	#editor = atom -m
-	editor = subl -w
-
-[diff]
-	tool = Kaleidoscope
+	editor = vim
 
 [merge]
-	# tool = araxis
 	tool = Kaleidoscope
 
 [difftool "Kaleidoscope"]
